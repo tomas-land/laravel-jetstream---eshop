@@ -1,3 +1,13 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+
+@layer base {
+    .transition-to-gray {
+      @apply transition ease-in-out delay-150 hover:text-gray-400 duration-500;
+
+    }
+   
+    /* ... */
+  }
