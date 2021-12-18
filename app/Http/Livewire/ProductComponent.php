@@ -8,11 +8,7 @@ class ProductComponent extends Component
 {
     public $products;
 
-    public function mount()
-    {
-        $this->products = Product::all();
-
-    }
+   
     public function render()
     {
         

@@ -8,7 +8,9 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
     ],
-
+    plugins: [
+        require('daisyui'),
+      ],
     theme: {
         screens: {
             xl: { max: "1279px" },

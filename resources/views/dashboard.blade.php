@@ -5,10 +5,10 @@
         </h2>
     </x-slot>
 
-    <div class="py-10 bg-gray-500">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-               <x-jet-button>Create</x-jet-button>
+    <div class="py-10 bg-gray-100">
+        <div class="max-w-7xl mx-auto px-6 ">
+            <div class="bg-white overflow-hidden shadow-xl rounded-lg">
+                bgbg
             </div>
         </div>
     </div>

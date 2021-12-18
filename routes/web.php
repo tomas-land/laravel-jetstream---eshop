@@ -1,6 +1,9 @@
 <?php
 
-use App\Http\Livewire\Frontpage;
+use App\Http\Livewire\Pages\CartComponent;
+use App\Http\Livewire\Pages\CheckoutComponent;
+use App\Http\Livewire\Pages\HomepageComponent;
+use App\Http\Livewire\Pages\ShopComponent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,15 +15,18 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-Route::get('/', function () {
-    return view('landing_page');
-});
+// Route::get('/', function () {
+//     return view('');
+// });
 // Route::get('/', function () {
 //     return view('homepage');
 // });
-// Route::get('/', Frontpage::class);
+Route::get('/', HomepageComponent::class);
+Route::get('/parduotuve', ShopComponent::class)->name('shop');
+Route::get('/krepselis', CartComponent::class);
+// Route::get('/', CheckoutComponent::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

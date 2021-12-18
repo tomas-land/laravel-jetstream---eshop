@@ -20,7 +20,7 @@
     </head>
 
 
-    <body class="font-sans antialiased">
+    <body class="bg-white font-sans antialiased">
         <x-jet-banner />
 
         <div class="min-h-screen bg-gray-100">
