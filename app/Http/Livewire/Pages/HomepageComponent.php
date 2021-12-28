@@ -16,6 +16,6 @@ class HomepageComponent extends Component
 
     public function render()
     {
-        return view('livewire.pages.homepage-component');
+        return view('livewire.pages.homepage-component')->layout('layouts.guest');
     }
 }

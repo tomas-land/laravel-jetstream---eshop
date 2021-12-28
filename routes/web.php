@@ -3,6 +3,7 @@
 use App\Http\Livewire\Pages\CartComponent;
 use App\Http\Livewire\Pages\CheckoutComponent;
 use App\Http\Livewire\Pages\HomepageComponent;
+use App\Http\Livewire\Pages\DetailsComponent;
 use App\Http\Livewire\Pages\ShopComponent;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +26,8 @@ use Illuminate\Support\Facades\Route;
 // });
 Route::get('/', HomepageComponent::class);
 Route::get('/parduotuve', ShopComponent::class)->name('shop');
-Route::get('/krepselis', CartComponent::class);
+Route::get('/krepselis', CartComponent::class)->name('cart');
+Route::get('/preke/{slug}', DetailsComponent::class)->name('product.details');
 // Route::get('/', CheckoutComponent::class);
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

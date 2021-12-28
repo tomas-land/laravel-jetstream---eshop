@@ -42,7 +42,7 @@
     <div class="bg-gray-200 uppercase text-center">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
     <header class="flex bg-white">
         <div class="logo ">
-            <img class='w-52' src="./img/techlogo.JPG" alt="logo">
+            <img class='w-52' src="{{asset('img/techlogo.JPG')}}" alt="logo">
         </div>
         <nav class="ml-5 flex justify-between w-full text-sm">
             <ul class="flex lg:hidden items-center gap-8">
@@ -66,7 +66,7 @@
                         <path d="M160,288H409.44a8,8,0,0,0,7.85-6.43l28.8-144a8,8,0,0,0-7.85-9.57H128"
                             style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
                     </svg></x-jet-nav-link>
-                    <span class="counter flex items-center justify-center ml-2">0</span>
+                    <span class="counter flex items-center justify-center ml-2">{{Cart::count()}}</span>
                 </div>
                 <label class="relative block">
                     <span class="sr-only">Search</span>
@@ -95,9 +95,9 @@
             </div>
         </header>
     @endif
-    <div class=" font-sans text-gray-900 antialiased bg-white">
+    <main class=" font-sans text-gray-900 antialiased bg-white">
         {{ $slot }}
-    </div>
+    </main>
     <footer class="w-full h-80 flex items-center justify-center bg-gray-700 text-white text-2xl">
         footer
     </footer>

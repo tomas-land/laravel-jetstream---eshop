@@ -10,10 +10,12 @@ use Livewire\WithPagination;
 class ShopComponent extends Component
 {
     use WithPagination;
+    protected $paginationTheme = 'tailwind';
     public function render()
     {
         $categories = Category::all();
-        $products = Product::paginate(12);
-        return view('livewire.pages.shop-component', ['products' => $products,'categories'=>$categories]);
+        $products = Product::paginate(3);
+        return view('livewire.pages.shop-component', ['products' => $products,'categories'=>$categories])
+        ->layout('layouts.guest');
     }
 }

@@ -1,6 +1,6 @@
-<x-guest-layout>
 
 
+<div>
     {{-- Carousel --}}
     <section class="container flex justify-center items-center text-3xl  bg-red-200 h-96">carousel</section>
     {{-- Popular products --}}
@@ -70,5 +70,4 @@
         <div class="border-t-2 my-8 border-gray-700 w-12"></div>
         @livewire('product-component',['products'=>$products])
     </section>
-
-</x-guest-layout>
+</div>
