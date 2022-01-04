@@ -23,7 +23,21 @@
              </ul>
          </div>
          {{-- Products --}}
-         <div class="w-3/4  p-4">
+         <div class="w-3/4  px-4">
+             <div class="flex justify-end mb-4">
+                 <div class=" ">
+                     <select class="mr-4 py-4 pr-8 border-gray-300 text-gray-400 hover:text-gray-800" wire:model='pagesize'>
+                         <option selected value="6">Rodyti po 6</option>
+                         <option value="12">Rodyti po 12</option>
+                         <option value="18">Rodyti po 18</option>
+                     </select>
+                     <select class="mr-4 p-4 border-gray-300 text-gray-400 hover:text-gray-800" wire:model='sorting'>
+                         <option selected value="latest">Rikiuoti nuo naujausių</option>
+                         <option value="min-max">Rikiuoti pagal kainą (min->max)</option>
+                         <option value="max-min">Rikiuoti pagal kainą (max->min)</option>
+                     </select>
+                 </div>
+             </div>
              <div class="grid grid-cols-3 gap-3">
                  @foreach ($products as $product)
                      <div class="">
