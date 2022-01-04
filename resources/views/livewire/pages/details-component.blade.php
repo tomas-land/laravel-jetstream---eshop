@@ -57,27 +57,19 @@
                     href="{{ route('shop') }}">{{ $product->category['name'] }}</a>
             </div>
             <div class="my-5 text-lg">Liko {{ $product->quantity }}</div>
-            <div >
-                <div class="flex text-base font-semibold border border-gray-300 ">
+            <div class="flex">
+                <div class="flex  text-base font-semibold border border-gray-300 ">
                     <div class="text-gray-400 flex items-center justify-center mx-2">KIEKIS</div>
                     <button class="px-4 p-4" wire:click="increment">+</button>
                     <h1 class="flex items-center justify-center">{{ $count }}</h1>
-                    {{-- <input name='qty' type="hidden" value="{{ $count }}"> --}}
                     <button class="px-4 p-4" wire:click="decrement">-</button>
                 </div>
                 <form class="flex" action="" wire:submit.prevent="addToCart({{ $product->id }})">
-              
-                    
-                    {{-- @csrf --}}
-                {{-- @livewire('counter') --}}
-                {{-- <x-jet-button wire:click='store({{$product->id}},{{$product->name}},{{$product->price}})' class="uppercase ml-8">į krepšelį</x-jet-button> --}}
-                 {{-- <a href="#" wire:click="store({{ $product->id }},'{{ $product->name }}',{{ $product->price }})">add</a> --}}
-<button type="submit">add</button>
-                </form>  
-             {{-- {{$cart}} --}}
+                    <x-jet-button class="ml-8">į krepšelį</x-jet-button>
+                </form>
             </div>
         </div>
-      
+
         {{-- Related products --}}
         <div class="w-full mt-20">
             <section class="container my-16">

@@ -9,8 +9,9 @@ use Livewire\WithPagination;
 
 class ShopComponent extends Component
 {
+
+
     use WithPagination;
-    protected $paginationTheme = 'tailwind';
     public function render()
     {
         $categories = Category::all();
