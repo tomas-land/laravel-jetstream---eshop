@@ -28,7 +28,7 @@
                  @foreach ($products as $product)
                      <div class="">
                          <a href="{{ route('product.details', $product->slug) }}">
-                             <img src="./img/laptop.jpeg" class="" alt="laptop">
+                             <img src="{{ asset($product->image) }}" class="" alt="laptop">
                              <h3 class="text-center uppercase">{{ $product->name }}</h3>
                              <h5 class="text-center uppercase">&euro;{{ $product->price }}</h5>
                          </a>

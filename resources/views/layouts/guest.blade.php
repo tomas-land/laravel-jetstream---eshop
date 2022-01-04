@@ -18,7 +18,7 @@
     <script src="{{ mix('js/app.js') }}" defer></script>
 </head>
 
-<body class="bg-white">
+<body class="bg-white min-h-screen flex flex-col ">
     {{-- Login --}}
     <div class="flex justify-end p-5 bg-gray-100 dark:bg-gray-900 ">
         @if (Route::has('login'))
@@ -95,10 +95,11 @@
             </div>
         </header>
     @endif
-    <main class=" font-sans text-gray-900 antialiased bg-white">
+    <main class=" font-sans text-gray-900 antialiased bg-white flex-grow">
         {{ $slot }}
     </main>
-    <footer class="w-full h-80 flex items-center justify-center bg-gray-700 text-white text-2xl">
+    {{-- Footer --}}
+    <footer class="w-full h-80 flex items-center justify-center bg-gray-700 text-white text-2xl  ">
         footer
     </footer>
     @stack('modals')
