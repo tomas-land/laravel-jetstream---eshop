@@ -17,7 +17,7 @@
     <div class="container flex flex-wrap mt-8">
         {{-- Product details --}}
         <div class="image  w-2/4 sm:w-full">
-            <img src="{{ asset('img/laptop.jpeg') }}" class="" alt="laptop">
+            <img src="{{ asset($product->image) }}" class="" alt="laptop">
         </div>
         <div class="w-2/4 pl-6 sm:w-full sm:mt-12 sm:px-8">
             <div class="uppercase text-5xl">{{ $product->name }}</div>

@@ -95,11 +95,11 @@
             </div>
         </header>
     @endif
-    <main class=" font-sans text-gray-900 antialiased bg-white flex-grow">
+    <main class=" font-sans text-gray-900 antialiased bg-white flex-grow h-auto">
         {{ $slot }}
     </main>
     {{-- Footer --}}
-    <footer class="w-full h-80 flex items-center justify-center bg-gray-700 text-white text-2xl  ">
+    <footer class="w-full h-60 flex items-center justify-center bg-gray-700 text-white text-2xl  ">
         footer
     </footer>
     @stack('modals')

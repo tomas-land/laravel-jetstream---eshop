@@ -12,18 +12,20 @@
              <x-jet-nav-link href="{{ route('shop') }}">parduotuve</x-jet-nav-link>
          </div>
      </x-slot>
-     <div class="container flex h-screen">
+     <div class="container flex ">
          {{-- Sidebar --}}
          <div class="w-1/4 ">
              <h2 class="uppercase text-md font-semibold py-5">prekių kategorijos</h2>
              <ul class="flex-col  text-gray-400">
                  @foreach ($categories as $category)
-                     <li class="">{{ $category->name }}</li>
+                     <li class="">
+                    <a href="{{route('product.category',$category->slug)}}">{{ $category->name }}</a>
+                    </li>
                  @endforeach
              </ul>
          </div>
          {{-- Products --}}
-         <div class="w-3/4  px-4">
+         <div class="w-3/4  px-4 ">
              <div class="flex justify-end mb-4">
                  <div class=" ">
                      <select class="mr-4 py-4 pr-8 border-gray-300 text-gray-400 hover:text-gray-800" wire:model='pagesize'>
@@ -38,11 +40,11 @@
                      </select>
                  </div>
              </div>
-             <div class="grid grid-cols-3 gap-3">
+             <div class="grid grid-cols-3 gap-3 h-auto">
                  @foreach ($products as $product)
                      <div class="">
                          <a href="{{ route('product.details', $product->slug) }}">
-                             <img src="{{ asset($product->image) }}" class="" alt="laptop">
+                             <img src="{{ asset($product->image) }}" class="" alt="product image">
                              <h3 class="text-center uppercase">{{ $product->name }}</h3>
                              <h5 class="text-center uppercase">&euro;{{ $product->price }}</h5>
                          </a>
@@ -52,7 +54,7 @@
 
 
              </div>
-             <div class="mt-8">
+             <div class="my-8">
                  {{ $products->links() }}
              </div>
          </div>
