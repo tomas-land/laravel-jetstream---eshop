@@ -1142,6 +1142,9 @@ select {
 .top-0 {
 	top: 0px;
 }
+.bottom-0 {
+	bottom: 0px;
+}
 .z-0 {
 	z-index: 0;
 }
@@ -1175,13 +1178,13 @@ select {
 	margin-top: 5rem;
 	margin-bottom: 5rem;
 }
-.my-16 {
-	margin-top: 4rem;
-	margin-bottom: 4rem;
-}
 .my-8 {
 	margin-top: 2rem;
 	margin-bottom: 2rem;
+}
+.my-16 {
+	margin-top: 4rem;
+	margin-bottom: 4rem;
 }
 .my-10 {
 	margin-top: 2.5rem;
@@ -1260,14 +1263,14 @@ select {
 .mb-4 {
 	margin-bottom: 1rem;
 }
+.mr-4 {
+	margin-right: 1rem;
+}
 .-mt-px {
 	margin-top: -1px;
 }
 .ml-9 {
 	margin-left: 2.25rem;
-}
-.mr-4 {
-	margin-right: 1rem;
 }
 .ml-8 {
 	margin-left: 2rem;
@@ -1335,20 +1338,14 @@ select {
 .h-2 {
 	height: 0.5rem;
 }
+.h-auto {
+	height: auto;
+}
 .h-96 {
 	height: 24rem;
 }
 .h-screen {
 	height: 100vh;
-}
-.h-auto {
-	height: auto;
-}
-.h-80 {
-	height: 20rem;
-}
-.h-0 {
-	height: 0px;
 }
 .h-60 {
 	height: 15rem;
@@ -1793,6 +1790,9 @@ select {
 .p-1 {
 	padding: 0.25rem;
 }
+.p-7 {
+	padding: 1.75rem;
+}
 .px-4 {
 	padding-left: 1rem;
 	padding-right: 1rem;
@@ -1853,9 +1853,9 @@ select {
 	padding-left: 3rem;
 	padding-right: 3rem;
 }
-.px-5 {
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
+.px-7 {
+	padding-left: 1.75rem;
+	padding-right: 1.75rem;
 }
 .pt-6 {
 	padding-top: 1.5rem;
@@ -1890,6 +1890,18 @@ select {
 .pt-10 {
 	padding-top: 2.5rem;
 }
+.pr-8 {
+	padding-right: 2rem;
+}
+.pl-2 {
+	padding-left: 0.5rem;
+}
+.pl-9 {
+	padding-left: 2.25rem;
+}
+.pr-36 {
+	padding-right: 9rem;
+}
 .pr-6 {
 	padding-right: 1.5rem;
 }
@@ -1902,17 +1914,11 @@ select {
 .pt-8 {
 	padding-top: 2rem;
 }
-.pr-8 {
-	padding-right: 2rem;
+.pr-5 {
+	padding-right: 1.25rem;
 }
-.pl-2 {
-	padding-left: 0.5rem;
-}
-.pl-9 {
-	padding-left: 2.25rem;
-}
-.pr-3 {
-	padding-right: 0.75rem;
+.pr-7 {
+	padding-right: 1.75rem;
 }
 .text-left {
 	text-align: left;
@@ -1969,6 +1975,9 @@ select {
 }
 .font-semibold {
 	font-weight: 600;
+}
+.font-bold {
+	font-weight: 700;
 }
 .uppercase {
 	text-transform: uppercase;
@@ -2302,9 +2311,9 @@ select {
 	--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
 	box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
-.focus\:ring-1:focus {
+.focus\:ring-0:focus {
 	--tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
-	--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+	--tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(0px + var(--tw-ring-offset-width)) var(--tw-ring-color);
 	box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
 }
 .focus\:ring-gray-300:focus {
@@ -2644,10 +2653,5 @@ select {
 
 	.sm\:text-left {
 		text-align: left;
-	}
-
-	.sm\:text-sm {
-		font-size: 0.875rem;
-		line-height: 1.25rem;
 	}
 }

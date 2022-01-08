@@ -20,7 +20,7 @@
 
 <body class="bg-white min-h-screen flex flex-col ">
     {{-- Login --}}
-    <div class="flex justify-end p-5 bg-gray-100 dark:bg-gray-900 ">
+    <div class="flex justify-end bg-gray-100 dark:bg-gray-900 ">
         @if (Route::has('login'))
             <div class="space-x-2.5">
                 @auth
@@ -39,8 +39,8 @@
         @endif
     </div>
     {{-- Header --}}
-    <div class="bg-gray-200 uppercase text-center">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
-    <header class="flex bg-white">
+    <div class=" uppercase text-center">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
+    <header class="flex " style="background: #f9f9fb">
         <div class="logo ">
             <img class='w-52' src="{{asset('img/techlogo.JPG')}}" alt="logo">
         </div>
@@ -53,9 +53,10 @@
                 <x-jet-nav-link href="/posts">KONTAKTAI</x-jet-nav-link>
                 <x-jet-nav-link href="/posts">BLOGAS</x-jet-nav-link>
             </ul>
-            <div class="w-full flex justify-end items-center px-5">
+            <div class="w-full flex justify-end items-center pr-5 ">
+               @livewire('header-search-component')
                 <div class="cart flex mr-8 ">
-                    <x-jet-nav-link href="/krepselis"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
+                    <x-jet-nav-link href="{{route('cart')}}"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
                         <title>ionicons-v5-d</title>
                         <circle cx="176" cy="416" r="16"
                             style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
@@ -68,19 +69,7 @@
                     </svg></x-jet-nav-link>
                     <span class="counter flex items-center justify-center ml-2">{{Cart::count()}}</span>
                 </div>
-                <label class="relative block">
-                    <span class="sr-only">Search</span>
-                    <span class="absolute inset-y-0 left-0 flex items-center pl-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512">
-                            <title>ionicons-v5-f</title>
-                            <path
-                                d="M456.69,421.39,362.6,327.3a173.81,173.81,0,0,0,34.84-104.58C397.44,126.38,319.06,48,222.72,48S48,126.38,48,222.72s78.38,174.72,174.72,174.72A173.81,173.81,0,0,0,327.3,362.6l94.09,94.09a25,25,0,0,0,35.3-35.3ZM97.92,222.72a124.8,124.8,0,1,1,124.8,124.8A124.95,124.95,0,0,1,97.92,222.72Z" />
-                        </svg>
-                    </span>
-                    <input
-                        class="placeholder:italic placeholder:text-gray-400 block w-full border border-gray-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
-                        placeholder="Search for anything..." type="text" name="search" />
-                </label>
+                
                 {{-- <x-jet-input placeholder="Search for anything..." class="p-1 placeholder-shown:text-gray-100 placeholder-shown:italic">
                         <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-f</title><path d="M456.69,421.39,362.6,327.3a173.81,173.81,0,0,0,34.84-104.58C397.44,126.38,319.06,48,222.72,48S48,126.38,48,222.72s78.38,174.72,174.72,174.72A173.81,173.81,0,0,0,327.3,362.6l94.09,94.09a25,25,0,0,0,35.3-35.3ZM97.92,222.72a124.8,124.8,0,1,1,124.8,124.8A124.95,124.95,0,0,1,97.92,222.72Z"/></svg>
                         Search..</x-jet-input> --}}
