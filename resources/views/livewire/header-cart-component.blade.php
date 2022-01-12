@@ -1,4 +1,4 @@
-<div class="cart flex mr-8 ">
+<div class="cart flex pr-5 ">
     <x-jet-nav-link href="{{route('cart')}}"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
         <title>ionicons-v5-d</title>
         <circle cx="176" cy="416" r="16"

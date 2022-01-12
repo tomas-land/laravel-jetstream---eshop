@@ -12,20 +12,20 @@
             <x-jet-nav-link href="{{ route('shop') }}">parduotuve</x-jet-nav-link>
         </div>
     </x-slot>
-    <div class="container flex ">
+    <div class="container flex flex-wrap">
         {{-- Sidebar --}}
-        <div class="w-1/4 ">
+        <div class="w-1/4 mb-5 md:w-screen lg:pl-8">
             <h2 class="uppercase text-md font-semibold py-5">prekių kategorijos</h2>
             <ul class="flex-col  text-gray-400">
                 @foreach ($categories as $category)
-                    <li class="">
+                    <li class="py-2">
                    <a href="{{route('product.category',$category->slug)}}">{{ $category->name }}</a>
                    </li>
                 @endforeach
             </ul>
         </div>
         {{-- Products --}}
-        <div class="w-3/4  px-4 ">
+        <div class="w-3/4  px-4 md:w-screen">
             <div class="flex justify-end mb-4">
                 <div class=" ">
                     <select class="mr-4 py-4 pr-8 border-gray-300 text-gray-400 hover:text-gray-800" wire:model='pagesize'>
@@ -40,7 +40,7 @@
                     </select>
                 </div>
             </div>
-            <div class="grid grid-cols-3 gap-3 h-auto">
+            <div class="grid grid-cols-3 gap-3 h-auto lg:grid-cols-2 sm:grid-cols-1">
                 @foreach ($products as $product)
                     <div class="">
                         <a href="{{ route('product.details', $product->slug) }}">

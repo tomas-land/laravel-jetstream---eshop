@@ -2,7 +2,7 @@
 
 <div>
     {{-- Carousel --}}
-    <section class="container flex justify-center items-center text-3xl  bg-red-200 h-96">carousel</section>
+    <section class=" flex justify-center items-center text-3xl  bg-red-200 h-96 w-screen">carousel</section>
     {{-- Popular products --}}
     <section class="container my-16">
         <h1 class="text-3xl font-semibold text-gray-700 sm:pl-8">POPULIARIAUSIOS <br> PREKĖS</h1>
@@ -62,7 +62,6 @@
             </div>
         </div>
     </div>
-    @livewire('button-component')
     <x-jet-section-border></x-jet-section-border>
     {{-- Latest products --}}
     <section class="container my-16">

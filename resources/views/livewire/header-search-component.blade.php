@@ -1,6 +1,5 @@
-<div>
-    <label class="relative block pr-8 ">
-        {{-- <span class="sr-only">Search</span> --}}
+
+    <div class="relative block ">
         <form action="{{ route('product.search') }}" method="GET">
             <span class="absolute inset-y-0 left-0 flex items-center pl-2">
                 <button type="submit">
@@ -12,17 +11,18 @@
                 </button>
             </span>
             <input name="searchQuery" wire:model='query' wire:keydown.escape="resetSearch"
-                class="focus:border-gray-300 focus:ring-0 outline-transparent form-input placeholder:italic placeholder:text-gray-400 block w-full border border-gray-300 rounded-md py-2 pl-9 pr-36 shadow-sm  "
+            style="border: #f9f9fb solid 2px"
+                class="sm:w-screen focus:border-gray-300 focus:ring-0 outline-transparent  placeholder:italic placeholder:text-gray-400 block w-full border border-gray-300 rounded-md py-2 pl-9 pr-56 shadow-sm  "
                 placeholder="Search for anything..." type="text"  autocomplete="off" />
         </form>
         @if (!empty($query))
             <div class="fixed top-0 right-0 bottom-0 left-0" wire:click='resetSearch'></div> <!-- div for closing search by clicking anywhere away from search-->
-            <div class="absolute z-5 flex flex-col bg-white w-full divide-y border border-gray-200">
+            <div class=" absolute z-5 flex flex-col bg-white divide-y border border-gray-200 w-full">
                 @if (!empty($products))
                     @foreach ($products as $product)
-                        <a class="px-3 py-4 flex" href="{{ route('product.details', $product['slug']) }}">
+                        <a class="px-3 py-4 flex hover:bg-gray-100" href="{{ route('product.details', $product['slug']) }}">
                             <div class="w-14"><img src="{{ asset($product['image']) }}" alt=""></div>
-                            <div class="flex flex-col pl-3">
+                            <div class="flex flex-col pl-3 pr-12">
                                 <div class="text-lg font-bold">{{ $product['name'] }}</div>
                                 <div>{{ $product['details'] }}</div>
                             </div>
@@ -37,5 +37,5 @@
             </div>
         @endif
     
-    </label>
-</div>
+        </div>
+

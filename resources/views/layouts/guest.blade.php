@@ -39,28 +39,56 @@
         @endif
     </div>
     {{-- Header --}}
-    <div class=" uppercase text-center">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
-    <header class="flex " style="background: #f9f9fb">
-        <div class="logo ">
-            <img class='w-52' src="{{asset('img/techlogo.JPG')}}" alt="logo">
-        </div>
-        <nav class="ml-5 flex justify-between w-full text-sm">
-            <ul class="flex lg:hidden items-center gap-8">
-                <x-jet-nav-link class='' href="/">PRADŽIA</x-jet-nav-link>
-                <x-jet-nav-link href="/parduotuve">PARDUOTUVĖ</x-jet-nav-link>
-                <x-jet-nav-link href="#">PASLAUGOS</x-jet-nav-link>
-                <x-jet-nav-link class="whitespace-nowrap" href="#">APIE MUS</x-jet-nav-link>
-                <x-jet-nav-link href="#">KONTAKTAI</x-jet-nav-link>
-                <x-jet-nav-link href="#">BLOGAS</x-jet-nav-link>
-            </ul>
-            <div class="w-full flex justify-end items-center pr-5 ">
-               @livewire('header-search-component')
-               @livewire('header-cart-component')
+    <div class=" uppercase text-center bg-gray-500 text-gray-300">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
+    <header>
+        <nav style="background: #f9f9fb">
+            <div class="max-w-7xl mx-auto ">
+                <div class="flex justify-between flex-wrap">
+                    <!--logo + menu -->
+                    <div class="flex space-x-2">
+                        <div class="flex-shrink-0">
+                            <img class='h-28 w-full' src="{{ asset('img/techlogo.JPG') }}" alt="logo">
+                        </div>
+                        <div class="lg:hidden flex items-center space-x-4">
+                            <x-jet-nav-link class='' href="/">PRADŽIA</x-jet-nav-link>
+                            <x-jet-nav-link href="/parduotuve">PARDUOTUVĖ</x-jet-nav-link>
+                            <x-jet-nav-link href="#">PASLAUGOS</x-jet-nav-link>
+                            <x-jet-nav-link class="whitespace-nowrap" href="#">APIE MUS</x-jet-nav-link>
+                            <x-jet-nav-link href="#">KONTAKTAI</x-jet-nav-link>
+                            <x-jet-nav-link href="#">BLOGAS</x-jet-nav-link>
+                        </div>
+                    </div>
+
+                    <!-- cart + hamburger -->
+                    <div class="flex items-center space-x-1">
+                        @livewire('header-cart-component')
+                        <div class="hidden items-center lg:flex pr-10">
+                            <button class="mobile-menu-button">
+                                <svg class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 6h16M4 12h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </nav>
+
+            <!-- mobile menu -->
+            <div class="mobile-menu hidden md:hidden">
+                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Features</a>
+                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Pricing</a>
+            </div>
+            <div class="max-w-7xl flex justify-end  mx-auto py-4 md:justify-center md:px-4 ">
+                {{-- <div class="w-full border-red-300"></div> --}}
+                @livewire('header-search-component')
+            </div>
+        </nav>  
     </header>
-        <!-- Page Heading -->
-        @if (isset($header))
+    <!-- Page Heading -->
+    @if (isset($header))
         <header class="bg-gray-200 shadow">
             <div class="container mx-auto py-8 sm:px-6 lg:px-8 flex items-center justify-between">
                 {{ $header }}
