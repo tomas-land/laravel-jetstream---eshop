@@ -76,7 +76,7 @@
                 </div>
             </div>
 
-            <!-- mobile menu lg:block-->
+            <!-- mobile menu -->
             <div class="mobile-menu hidden ">
                 <div class="flex flex-col pl-8 space-y-3">
                     <x-jet-nav-link class='mobile-link' href="/">PRADŽIA</x-jet-nav-link>

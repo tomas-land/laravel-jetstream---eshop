@@ -3,7 +3,7 @@ const menu = document.querySelector(".mobile-menu");
 const mobile_links = document.querySelectorAll(".mobile-link");
 
 btn.addEventListener("click", () => {
-    menu.classList.toggle("lg:block");
+    menu.classList.toggle("lg:flex");
 });
 
 for(let i = 0; i < mobile_links.length; i++){
