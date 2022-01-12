@@ -1,5 +1,5 @@
 
-    <div class="relative block ">
+    <div class="relative block">
         <form action="{{ route('product.search') }}" method="GET">
             <span class="absolute inset-y-0 left-0 flex items-center pl-2">
                 <button type="submit">
@@ -12,7 +12,7 @@
             </span>
             <input name="searchQuery" wire:model='query' wire:keydown.escape="resetSearch"
             style="border: #f9f9fb solid 2px"
-                class="sm:w-screen focus:border-gray-300 focus:ring-0 outline-transparent  placeholder:italic placeholder:text-gray-400 block w-full border border-gray-300 rounded-md py-2 pl-9 pr-56 shadow-sm  "
+                class="sm:w-screen w-96 focus:border-gray-300 focus:ring-0 outline-transparent  placeholder:italic placeholder:text-gray-400 block  border border-gray-300 rounded-md py-2 pl-9  shadow-sm  "
                 placeholder="Search for anything..." type="text"  autocomplete="off" />
         </form>
         @if (!empty($query))

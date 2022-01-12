@@ -39,7 +39,7 @@
         @endif
     </div>
     {{-- Header --}}
-    <div class=" uppercase text-center bg-gray-500 text-gray-300">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
+    <div class=" uppercase text-center bg-gray-500 text-gray-300 sm:text-sm">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
     <header>
         <nav style="background: #f9f9fb">
             <div class="max-w-7xl mx-auto ">
@@ -47,7 +47,7 @@
                     <!--logo + menu -->
                     <div class="flex space-x-2">
                         <div class="flex-shrink-0">
-                            <img class='h-28 w-full' src="{{ asset('img/techlogo.JPG') }}" alt="logo">
+                            <img class='h-28 w-full sm:h-20' src="{{ asset('img/techlogo.JPG') }}" alt="logo">
                         </div>
                         <div class="lg:hidden flex items-center space-x-4">
                             <x-jet-nav-link class='' href="/">PRADŽIA</x-jet-nav-link>
@@ -76,16 +76,21 @@
                 </div>
             </div>
 
-            <!-- mobile menu -->
-            <div class="mobile-menu hidden md:hidden">
-                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Features</a>
-                <a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Pricing</a>
+            <!-- mobile menu lg:block-->
+            <div class="mobile-menu hidden ">
+                <div class="flex flex-col pl-8 space-y-3">
+                    <x-jet-nav-link class='mobile-link' href="/">PRADŽIA</x-jet-nav-link>
+                    <x-jet-nav-link class='mobile-link' href="/parduotuve">PARDUOTUVĖ</x-jet-nav-link>
+                    <x-jet-nav-link class='mobile-link' href="#">PASLAUGOS</x-jet-nav-link>
+                    <x-jet-nav-link class="mobile-link whitespace-nowrap" href="#">APIE MUS</x-jet-nav-link>
+                    <x-jet-nav-link class='mobile-link' href="#">KONTAKTAI</x-jet-nav-link>
+                    <x-jet-nav-link class='mobile-link' href="#">BLOGAS</x-jet-nav-link>
+                </div>
             </div>
             <div class="max-w-7xl flex justify-end  mx-auto py-4 md:justify-center md:px-4 ">
-                {{-- <div class="w-full border-red-300"></div> --}}
                 @livewire('header-search-component')
             </div>
-        </nav>  
+        </nav>
     </header>
     <!-- Page Heading -->
     @if (isset($header))
@@ -104,6 +109,7 @@
     </footer>
     @stack('modals')
     @livewireScripts
+    <script type="text/javascript" src="{{ asset('js/mobile_menu.js') }}"></script>
 </body>
 
 </html>
