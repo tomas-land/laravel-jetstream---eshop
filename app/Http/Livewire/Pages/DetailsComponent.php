@@ -24,6 +24,7 @@ class DetailsComponent extends Component
         Cart::add($product->id, $product->name, $this->count, $product->price)->associate('App\Models\Product');
         // dd(Cart::content());
         // return redirect()->route('shop');
+        $this->emit('cart_updated');
     }
 
 

@@ -48,31 +48,14 @@
             <ul class="flex lg:hidden items-center gap-8">
                 <x-jet-nav-link class='' href="/">PRADŽIA</x-jet-nav-link>
                 <x-jet-nav-link href="/parduotuve">PARDUOTUVĖ</x-jet-nav-link>
-                <x-jet-nav-link href="/posts">PASLUGOS</x-jet-nav-link>
-                <x-jet-nav-link class="whitespace-nowrap" href="/posts">APIE MUS</x-jet-nav-link>
-                <x-jet-nav-link href="/posts">KONTAKTAI</x-jet-nav-link>
-                <x-jet-nav-link href="/posts">BLOGAS</x-jet-nav-link>
+                <x-jet-nav-link href="#">PASLAUGOS</x-jet-nav-link>
+                <x-jet-nav-link class="whitespace-nowrap" href="#">APIE MUS</x-jet-nav-link>
+                <x-jet-nav-link href="#">KONTAKTAI</x-jet-nav-link>
+                <x-jet-nav-link href="#">BLOGAS</x-jet-nav-link>
             </ul>
             <div class="w-full flex justify-end items-center pr-5 ">
                @livewire('header-search-component')
-                <div class="cart flex mr-8 ">
-                    <x-jet-nav-link href="{{route('cart')}}"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 512 512">
-                        <title>ionicons-v5-d</title>
-                        <circle cx="176" cy="416" r="16"
-                            style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
-                        <circle cx="400" cy="416" r="16"
-                            style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
-                        <polyline points="48 80 112 80 160 352 416 352"
-                            style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
-                        <path d="M160,288H409.44a8,8,0,0,0,7.85-6.43l28.8-144a8,8,0,0,0-7.85-9.57H128"
-                            style="fill:none;stroke:#000;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
-                    </svg></x-jet-nav-link>
-                    <span class="counter flex items-center justify-center ml-2">{{Cart::count()}}</span>
-                </div>
-                
-                {{-- <x-jet-input placeholder="Search for anything..." class="p-1 placeholder-shown:text-gray-100 placeholder-shown:italic">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512"><title>ionicons-v5-f</title><path d="M456.69,421.39,362.6,327.3a173.81,173.81,0,0,0,34.84-104.58C397.44,126.38,319.06,48,222.72,48S48,126.38,48,222.72s78.38,174.72,174.72,174.72A173.81,173.81,0,0,0,327.3,362.6l94.09,94.09a25,25,0,0,0,35.3-35.3ZM97.92,222.72a124.8,124.8,0,1,1,124.8,124.8A124.95,124.95,0,0,1,97.92,222.72Z"/></svg>
-                        Search..</x-jet-input> --}}
+               @livewire('header-cart-component')
             </div>
         </nav>
     </header>

@@ -20,6 +20,7 @@ class ShopComponent extends Component
     use WithPagination;
     public function render()
     {
+        
         if ($this->sorting == 'latest') {
             $products = Product::orderBy('created_at', 'DESC')->paginate($this->pagesize);
         } else if ($this->sorting == 'min-max') {
