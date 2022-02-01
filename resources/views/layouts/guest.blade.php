@@ -19,27 +19,22 @@
 </head>
 
 <body class="bg-white min-h-screen flex flex-col ">
+    <div class=" uppercase text-center bg-gray-500 text-gray-300 sm:text-sm">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
+
     {{-- Login --}}
-    <div class="flex justify-end bg-gray-100 dark:bg-gray-900 ">
+    <div class="flex justify-end dark:bg-gray-900 ">
         @if (Route::has('login'))
             <div class="space-x-2.5">
                 @auth
                     <a href="{{ url('/dashboard') }}"
                         class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
                 @else
-                    <a href="{{ route('login') }}" class="p-5 text-sm text-gray-700 dark:text-gray-500 underline">Log
-                        in</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}"
-                            class="ml-9 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                    @endif
+                    <a href="{{ route('login') }}" class=""><x-jet-button class="!bg-white text-gray-400 focus:outline-none">Prisijungti</x-jet-button></a>
                 @endauth
             </div>
         @endif
     </div>
     {{-- Header --}}
-    <div class=" uppercase text-center bg-gray-500 text-gray-300 sm:text-sm">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
     <header>
         <nav style="background: #f9f9fb">
             <div class="max-w-7xl mx-auto ">
@@ -100,7 +95,7 @@
             </div>
         </header>
     @endif
-    <main class=" font-sans text-gray-900 antialiased bg-white flex-grow h-auto">
+    <main class=" font-sans antialiased bg-white flex-grow h-auto">
         {{ $slot }}
     </main>
     {{-- Footer --}}
