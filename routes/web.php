@@ -40,7 +40,7 @@ Route::get('/paieska', SearchResultsComponent::class)->name('product.search');
 //     return view('dashboard');
 // })->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+Route::middleware(['auth:sanctum', 'verified','admin'])->group(function(){
     Route::get('/admin/account', AdminDashboardComponent::class)->name('admin.dashboard');
 });
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
