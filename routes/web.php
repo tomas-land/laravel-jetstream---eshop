@@ -7,6 +7,8 @@ use App\Http\Livewire\Pages\HomepageComponent;
 use App\Http\Livewire\Pages\DetailsComponent;
 use App\Http\Livewire\Pages\ShopComponent;
 
+use App\Http\Livewire\Admin\AdminDashboardComponent;
+use App\Http\Livewire\User\UserDashboardComponent;
 
 use App\Http\Livewire\SearchResultsComponent;
 use App\Http\Livewire\CategoryComponent;
@@ -23,12 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-// Route::get('/', function () {
-//     return view('');
-// });
-// Route::get('/', function () {
-//     return view('homepage');
-// });
+
 Route::get('/', HomepageComponent::class);
 Route::get('/parduotuve', ShopComponent::class)->name('shop');
 Route::get('/krepselis', CartComponent::class)->name('cart');
@@ -39,6 +36,14 @@ Route::get('/paieska', SearchResultsComponent::class)->name('product.search');
 
 
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::get('/admin/account', AdminDashboardComponent::class)->name('admin.dashboard');
+});
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::get('/user/account', UserDashboardComponent::class)->name('user.dashboard');
+
+});
