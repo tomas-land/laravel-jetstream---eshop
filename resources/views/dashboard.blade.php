@@ -8,7 +8,6 @@
     <div class="py-10 bg-gray-100">
         <div class="max-w-7xl mx-auto px-6 ">
             <div class="bg-white overflow-hidden shadow-xl rounded-lg">
-                bgbg
             </div>
         </div>
     </div>

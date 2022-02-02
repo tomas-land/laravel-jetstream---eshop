@@ -19,17 +19,25 @@
 </head>
 
 <body class="bg-white min-h-screen flex flex-col ">
-    <div class=" uppercase text-center bg-gray-500 text-gray-300 sm:text-sm">Nemokamas pristatymas Lietuvoje uz 50 &euro;</div>
+    <div class=" uppercase text-center bg-gray-500 text-gray-300 sm:text-sm">Nemokamas pristatymas Lietuvoje uz 50 &euro;
+    </div>
 
     {{-- Login --}}
     <div class="flex justify-end dark:bg-gray-900 ">
         @if (Route::has('login'))
             <div class="space-x-2.5">
                 @auth
-                    <a href="{{ url('/dashboard') }}"
-                        class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                    @if (Auth::user()->role === 'admin')
+                        <a href="{{ route('admin.dashboard') }}"
+                        <x-jet-button class="!bg-white text-gray-400 focus:outline-none">Mano paskyra</x-jet-button></a>
+                    @else
+                        <a href="{{ route('user.dashboard') }}"
+                        <x-jet-button class="!bg-white text-gray-400 focus:outline-none">Mano paskyra</x-jet-button></a>
+                    @endif
                 @else
-                    <a href="{{ route('login') }}" class=""><x-jet-button class="!bg-white text-gray-400 focus:outline-none">Prisijungti</x-jet-button></a>
+                    <a href="{{ route('login') }}" class="">
+                        <x-jet-button class="!bg-white text-gray-400 focus:outline-none">Prisijungti</x-jet-button>
+                    </a>
                 @endauth
             </div>
         @endif
