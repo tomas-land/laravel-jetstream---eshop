@@ -5,6 +5,10 @@
 
 E-commerce website developed with Laravel 8 / Jetstream authentication scaffolding / Livewire 
 
+## Preview
+
+http://techlogo.xyz/
+
 ## Project features
 
 
